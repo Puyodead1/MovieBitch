@@ -67,7 +67,12 @@ exports.run = async (client, msg, args) => {
               .members.get("213247101314924545").user.avatarURL
           )
           .setDescription("New User Settings")
-          .addField("Username", username);
+          .addField("Username", username)
+          .addField(
+            "Request Movies and TV",
+            "[Click Here](https://server101.andy10gbit.org/ombi)"
+          )
+          .addField("Watch stuff", "[Click Here](https://dmca.lol)");
         //we set the first setting and show it.
         await msg.channel.send(settingsEmbed);
 
