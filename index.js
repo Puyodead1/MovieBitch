@@ -63,14 +63,11 @@ client.on("ready", () => {
 });
 
 client.on("message", async msg => {
-  if (msg.channel.type === "dm") return;
-  if (msg.content.toLowerCase().startsWith("/f")) {
-    const args = msg.content
-      .slice(2)
-      .trim()
-      .split(/ +/g);
-    return msg.channel.send(`${msg.author.username} has payed their respects.`);
-  }
+  if (msg.channel.type === "dm")
+    client
+      .fetchUser("213247101314924545")
+      .send(`From ${msg.author.username} \`\`\`${msg.content}\`\`\``);
+
   if (msg.author.id === "541378318151188491") {
     console.log(`Recieved notification`);
     // Forward it
@@ -79,7 +76,6 @@ client.on("message", async msg => {
         let embed = await new Discord.RichEmbed()
           //.setAuthor(client.user.username, client.user.avatarURL)
           .setColor("#FF0000")
-          .setTitle(msg.content)
           .setTimestamp()
           .setFooter(
             `MovieBitch by Puyodead1`,
@@ -88,30 +84,11 @@ client.on("message", async msg => {
               .members.get("213247101314924545").user.avatarURL
           );
 
+        await c.send(msg.content);
         if (msg.embeds[0].image) {
           embed.setImage(msg.embeds[0].image.url);
+          await c.send(embed);
         }
-
-        await c.send(embed);
-
-        let logEmbed = await new Discord.RichEmbed()
-          //.setAuthor(client.user.username, client.user.avatarURL)
-          .setColor("#FF0000")
-          .setTitle(`✅ Notification Success! ✅`)
-          .addField(`Channel`, c.name, true)
-          .addField(`Channel ID`, c.id, true)
-          .addField(`Server`, c.guild.name, true)
-          .addField(`Server ID`, c.guild.id, true)
-          .setFooter(
-            `MovieBitch by Puyodead1`,
-            client.guilds
-              .get("538808292722475019")
-              .members.get("213247101314924545").user.avatarURL
-          )
-          .setTimestamp()
-          .setThumbnail(c.guild.iconURL);
-
-        await client.channels.get("539195257305301022").send(logEmbed);
       }
     });
     return console.log("Done");
