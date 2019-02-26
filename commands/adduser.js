@@ -17,7 +17,7 @@ exports.run = async (client, msg, args) => {
       .setFooter(
         `MovieBitch by Puyodead1`,
         client.guilds
-          .get("538808292722475019")
+          .get("473726968651710464")
           .members.get("213247101314924545").user.avatarURL
       )
       .setDescription(
@@ -39,7 +39,7 @@ exports.run = async (client, msg, args) => {
         .setFooter(
           `MovieBitch by Puyodead1`,
           client.guilds
-            .get("538808292722475019")
+            .get("473726968651710464")
             .members.get("213247101314924545").user.avatarURL
         )
         .setDescription("What is the username for the account?");
@@ -63,7 +63,7 @@ exports.run = async (client, msg, args) => {
           .setFooter(
             `MovieBitch by Puyodead1`,
             client.guilds
-              .get("538808292722475019")
+              .get("473726968651710464")
               .members.get("213247101314924545").user.avatarURL
           )
           .setDescription("New User Settings")
@@ -83,7 +83,7 @@ exports.run = async (client, msg, args) => {
           .setFooter(
             `MovieBitch by Puyodead1`,
             client.guilds
-              .get("538808292722475019")
+              .get("473726968651710464")
               .members.get("213247101314924545").user.avatarURL
           )
           .setDescription("Enter the email for the account");
@@ -111,7 +111,7 @@ exports.run = async (client, msg, args) => {
           .setFooter(
             `MovieBitch by Puyodead1`,
             client.guilds
-              .get("538808292722475019")
+              .get("473726968651710464")
               .members.get("213247101314924545").user.avatarURL
           )
           .addField("Username", username)
@@ -126,7 +126,7 @@ exports.run = async (client, msg, args) => {
           .setFooter(
             `MovieBitch by Puyodead1`,
             client.guilds
-              .get("538808292722475019")
+              .get("473726968651710464")
               .members.get("213247101314924545").user.avatarURL
           )
           .setDescription(
@@ -161,7 +161,7 @@ exports.run = async (client, msg, args) => {
           .setFooter(
             `MovieBitch by Puyodead1`,
             client.guilds
-              .get("538808292722475019")
+              .get("473726968651710464")
               .members.get("213247101314924545").user.avatarURL
           )
           .setDescription("Wizard Complete. Creating User...");
@@ -221,7 +221,7 @@ exports.run = async (client, msg, args) => {
               .setFooter(
                 `MovieBitch by Puyodead1`,
                 client.guilds
-                  .get("538808292722475019")
+                  .get("473726968651710464")
                   .members.get("213247101314924545").user.avatarURL
               )
               .setDescription(
@@ -241,7 +241,7 @@ exports.run = async (client, msg, args) => {
                 .setFooter(
                   `MovieBitch by Puyodead1`,
                   client.guilds
-                    .get("538808292722475019")
+                    .get("473726968651710464")
                     .members.get("213247101314924545").user.avatarURL
                 )
                 .setDescription(

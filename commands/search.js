@@ -12,7 +12,7 @@ exports.run = async (client, msg, args) => {
     .setTimestamp()
     .setFooter(
       `MovieBitch by Puyodead1`,
-      client.guilds.get("538808292722475019").members.get("213247101314924545")
+      client.guilds.get("473726968651710464").members.get("213247101314924545")
         .user.avatarURL
     );
 
