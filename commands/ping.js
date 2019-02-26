@@ -34,11 +34,6 @@ exports.run = async (client, msg, args) => {
   systemStats.push(`**Uptime**: ${uptime}`);
   let cpuUsage = await cpu.usage();
   systemStats.push(`**CPU Usage**: ${cpuUsage}%`);
-  systemStats.push(
-    `**Memory**: ${Math.round(
-      (process.memoryUsage().heapTotal / 1024 / 1024) * 100
-    ) / 100}MB`
-  );
   const statsEmbed = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
     .setFooter(msg.author.username, msg.author.avatarURL)
@@ -47,18 +42,5 @@ exports.run = async (client, msg, args) => {
     .setDescription("MovieBitch by Puyodead1.")
     .addField("> Bot Info", botStats, true)
     .addField("> System Info", systemStats, true);
-
-  let embed = new Discord.RichEmbed()
-    .setAuthor(client.user.username, client.user.avatarURL)
-    .setColor("#FF0000")
-    .setTitle("Pong!")
-    .setFooter(msg.author.username, msg.author.avatarURL)
-    .setTimestamp()
-    .addField(
-      "Bot Latency",
-      `${mssg.createdTimestamp - msg.createdTimestamp}ms`,
-      true
-    )
-    .addField("API Latency", `${Math.round(client.ping)}ms`, true);
   await mssg.edit(statsEmbed);
 };
