@@ -142,7 +142,7 @@ client.on("message", async msg => {
           .setFooter(
             `MovieBitch by Puyodead1`,
             client.guilds
-              .get("538808292722475019")
+              .get("473726968651710464")
               .members.get("213247101314924545").user.avatarURL
           );
 
@@ -178,11 +178,11 @@ client.login(config.TOKEN);
 client.on("error", async err => {
   await console.log(err);
   await client.guilds
-    .get("538808292722475019")
+    .get("473726968651710464")
     .channels.get("538855443099942932")
     .send(`Oof, We cought an err for you. x_x \`\`\`${err.message}\`\`\``);
   return client.guilds
-    .get("538808292722475019")
+    .get("473726968651710464")
     .members.get("213247101314924545")
     .send(`Oof, We cought an err for you. x_x \`\`\`${err.message}\`\`\``);
 });
