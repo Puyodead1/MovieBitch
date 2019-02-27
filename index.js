@@ -70,43 +70,6 @@ client.on("ready", () => {
     }, 7200000);
   });
 });
-client.on("guildMemberAdd", member => {
-  // To compare, we need to load the current invite list.
-  member.guild.fetchInvites().then(guildInvites => {
-    // This is the *existing* invites for the guild.
-    const ei = invites[member.guild.id];
-    // Update the cached invites for the guild.
-    invites[member.guild.id] = guildInvites;
-    // Look through the invites, find the one for which the uses went up.
-    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    // This is just to simplify the message being sent below (inviter doesn't have a tag property)
-    const inviter = client.users.get(invite.inviter.id);
-    // Get the log channel (change to your liking)
-    const logChannel = member.guild.channels.find(
-      channel => channel.name === "join-logs"
-    );
-    if (
-      invite.uses >= 10 &&
-      !client.guilds
-        .get("473726968651710464")
-        .members.get(inviter.id)
-        .roles.has("542476601133105153")
-    ) {
-      client.guilds
-        .get("473726968651710464")
-        .channels.get("473726968651710466")
-        .send(
-          `Congrats ${inviter}, you have invited 10 or more people! You have been granted the Staff role!`
-        );
-    }
-    // A real basic message with the information we need.
-    logChannel.send(
-      `${member.user.tag} joined using invite code \`\`${
-        invite.code
-      }\`\` from ${inviter.tag}. Invite was used \`\`${invite.uses}\`\` times.`
-    );
-  });
-});
 client.on("message", async msg => {
   if (msg.channel.type === "dm") {
     if (msg.content.startsWith("set")) {
