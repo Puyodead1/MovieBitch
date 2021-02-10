@@ -1,0 +1,9 @@
+{
+  "TOKEN": "BOT TOKEN",
+  "OMBI_APIKEY": "API KEY  ",
+  "OMBI_FULLURL": "https://<your server hostname>",
+  "OMBI_HOST": "<your serverhostname without the protocol>",
+  "OMBI_PORT": 443,
+  "MONGODEV": "mongodb://<username>:<password>@<host>:<port>/moviebitch",
+  "MONGO_URL": "mongodb://localhost:27017/MovieBitch"
+}
