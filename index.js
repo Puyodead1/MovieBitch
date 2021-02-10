@@ -71,28 +71,7 @@ client.on("ready", () => {
   });
 });
 client.on("message", async msg => {
-  if (msg.channel.type === "dm") {
-    if (msg.content.startsWith("set")) {
-      const args = msg.content.trim().split(/ +/g);
-      const command = args.shift().toLowerCase();
-      client.pmforwardChannel = args[0];
-      return msg.channel.send(
-        `Set the channel id to ${client.pmforwardChannel}`
-      );
-    }
-    if (msg.author.id === "213247101314924545") {
-      if (!client.pmforwardChannel) {
-        return client.guilds
-          .get("473726968651710464")
-          .channels.get("473726968651710466")
-          .send(msg.content);
-      }
-      return client.guilds
-        .get("473726968651710464")
-        .channels.get(client.pmforwardChannel)
-        .send(msg.content);
-    }
-  }
+  if (msg.author.bot) return;
   if (msg.author.id === "541378318151188491") {
     console.log(`Recieved notification`);
     // Forward it
@@ -117,10 +96,6 @@ client.on("message", async msg => {
       }
     });
     return console.log("Done");
-  }
-  if (msg.author.bot) return;
-  if (msg.content.toLowerCase().includes("whore")) {
-    return msg.reply("no u bitch");
   }
   if (msg.content.toLowerCase().indexOf("o!") !== 0) return;
   const args = msg.content
